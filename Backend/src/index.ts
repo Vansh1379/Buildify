@@ -1,7 +1,7 @@
 import express from "express"
 import cors from "cors"
 import bodyParser from "body-parser";
-import mainRouter from "./router/mainRouter"
+import mainRouter from "./routes/mainRouter"
 
 const app = express();
 const PORT = 3000;
