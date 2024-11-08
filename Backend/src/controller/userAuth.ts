@@ -1,12 +1,11 @@
-import e, { Request } from "express"
-import { Response } from "express"
+import  { Request, Response } from "express"
 import { PrismaClient } from "@prisma/client";
 import { loginValidation, signupValidation } from "../services/zod";
 import jwt from "jsonwebtoken"
 
 const prisma = new PrismaClient();
 
-export const signupAuth = async (req: Request, res: Response): Promise<e.Response<any, Record<string, any>> | undefined> => {
+export const signupAuth = async (req: Request, res: Response) => {
     try {
 
         const signupPayload = req.body;
@@ -59,7 +58,7 @@ export const signupAuth = async (req: Request, res: Response): Promise<e.Respons
 
 // ...................................................................................................................................................
 
-export const loginAuth = async (req: Request, res: Response):Promise<e.Response<any, Record<string, any>> | undefined> => {
+export const loginAuth = async (req: Request, res: Response) => {
     try {
         const loginPayload = req.body;
         const email = loginPayload.email;
